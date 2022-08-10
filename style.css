@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #272727;
+    font-family: 'Oswald', sans-serif;
+}
+.container{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 .5rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    color: white;
+    transition: 1s all;
+}
+.slideInLeft, .slideInRight, .slideInBottom , .slideInTop{
+    --bg : black;
+    --color : white;
+    color: black;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: 1s all ;
+}
+.slideInLeft:hover, .slideInRight:hover, .slideInBottom:hover, .slideInTop:hover{
+    color: var(--color);
+}
+.slideInLeft:before,
+.slideInRight:before,
+.slideInTop:before,
+.slideInBottom:before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    overflow: hidden;
+    background: var(--bg);
+    transition: 1s all;
+}
+.slideInLeft:before{
+    left: -100%;
+}
+.slideInRight:before{
+    left: 100%;
+}
+.slideInBottom:before{
+    top: -100%;
+}
+.slideInTop:before{
+    top: 100%;
+}
+
+.slideInLeft:hover:before, .slideInRight:hover:before , .slideInBottom:hover:before , .slideInTop:hover:before{
+    inset: 0;
+}
